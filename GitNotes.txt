@@ -1,0 +1,67 @@
+Git command examples
+====================
+# clone repo at specified url
+git clone https://github.com/gonzo2433/WorldOfDune.git
+                  
+# show status (displays unstaged files and if your local repo is ahead or behind the main server repo)
+git status
+
+-------- staging files ---------
+git add hello2.cpp
+# stage hello2.cpp
+
+git add .
+# stage all files (that are not listed in .gitignore)
+
+
+-------- commiting staged files (to local repo) ---------
+git commit -m "commit description"
+
+
+git commit -a -m "commit description"
+# use this to skip the add commnds. stage and commit all changes (that are not listed in .gitignore)
+# the 'git status' commands should be used prior to make sure that all changed files should actually be added. 
+# the .gitignore file should be modified if the file list contains temporary build files or folders(.pch, .obg, .tlog, bin, release)
+#
+
+
+
+# update local repository with any changes on server. Make sure you are clean before pulling.  (no uncommited local changes)
+git pull
+
+
+-------- show local changes -------
+git diff
+
+-------- undoing uncommitted changes ---------
+# remove all staged files
+git restore --staged .
+
+# remove staged file foo.txt
+git restore --staged foo.txt
+
+
+
+# discard all local changes and revert files back to state before you modified them
+git restore .
+
+
+-------- undoing  committed changes
+#undo last commit, use 'git log' to display commit history and hash values
+git revert <hash-value>
+
+# reset HEAD **Danger** use only for undoing local commits,  revert is preferred and safer
+git reset --soft HEAD~1
+
+
+--------- branching ------------
+git branch my-branch
+# create new branch named my-branch
+
+git checkout my-branch
+# switch to branch named my-branch
+
+
+#list configuration
+git config --list			                                             
+
