@@ -7,5 +7,7 @@
 int main()
 {
     std::cout << "Welcome to the World Of Dune!\n";
+    std::cout << "Brought to you by the magic of Gonzo!\n";
+
 }
 //
